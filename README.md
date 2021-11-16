@@ -1,3 +1,9 @@
+# Modelling tools
+## Uncertainty quantification
+- [UQ360](https://uq360.mybluemix.net/resources/guidance): provides confidence intervals for your ML models.
+    It also provides model calibration functionalities. If you have already trained your models, you could make use
+    of the [meta model](https://github.com/IBM/UQ360/tree/main/examples/blackbox_metamodel).
+
 # Tools
 ## AWS Lambda
 Use case: deploy ML models to run inference on new data
