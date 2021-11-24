@@ -1,3 +1,7 @@
+# Quantum computing
+## Explanation
+- [Trapping ions](https://www.youtube.com/watch?v=j1SKprQIkyE)
+
 # Modelling tools
 ## Uncertainty quantification
 - [UQ360](https://uq360.mybluemix.net/resources/guidance): provides confidence intervals for your ML models.
