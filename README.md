@@ -1,3 +1,6 @@
+# MLOps
+- [SageMarker](sagemaker.md)
+
 # Quantum computing
 ## Explanation
 - [Trapping ions](https://www.youtube.com/watch?v=j1SKprQIkyE)
