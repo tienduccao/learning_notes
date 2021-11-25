@@ -23,3 +23,6 @@ Use case: deploy ML models to run inference on new data
 - [Deploy Python image](https://docs.aws.amazon.com/lambda/latest/dg/python-image.html)
 - [Schedule your Lambda function](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/RunLambdaSchedule.html)
 - [Clean up](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-images.html#gettingstarted-image-cleanup)
+
+# References
+- https://mlops.neptune.ai/
