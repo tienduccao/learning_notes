@@ -1,6 +1,9 @@
 # How to
 - [Setup studio, create experiments](https://aws.amazon.com/getting-started/hands-on/build-train-deploy-monitor-machine-learning-model-sagemaker-studio/?)
 
+## Experiment
+- [Experiments SDK](https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-experiments/tensorflow2-california-housing-regression-experiment/tensorflow2-california-housing-regression-experiment.ipynb)
+
 ## Pipeline
 - [Build a pipeline](https://sagemaker-examples.readthedocs.io/en/latest/sagemaker-pipelines/tabular/abalone_build_train_deploy/sagemaker-pipelines-preprocess-train-evaluate-batch-transform.html#)
 - [Visualize pipeline](https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-studio-list-pipelines.html)
