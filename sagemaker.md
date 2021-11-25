@@ -4,6 +4,9 @@
 ## Experiment
 - [Experiments SDK](https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-experiments/tensorflow2-california-housing-regression-experiment/tensorflow2-california-housing-regression-experiment.ipynb)
 
+## Tuning
+- [Hyperparameters tuning](https://github.com/aws/amazon-sagemaker-examples/blob/master/hyperparameter_tuning/xgboost_direct_marketing/hpo_xgboost_direct_marketing_sagemaker_python_sdk.ipynb). Adjust `max_jobs` and `max_parallel_jobs` of `HyperparameterTuner` to speed up your tuning process.
+
 ## Pipeline
 - [Build a pipeline](https://sagemaker-examples.readthedocs.io/en/latest/sagemaker-pipelines/tabular/abalone_build_train_deploy/sagemaker-pipelines-preprocess-train-evaluate-batch-transform.html#)
 - [Visualize pipeline](https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-studio-list-pipelines.html)
