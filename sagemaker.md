@@ -4,6 +4,11 @@
 ## Experiment
 - [Experiments SDK](https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-experiments/tensorflow2-california-housing-regression-experiment/tensorflow2-california-housing-regression-experiment.ipynb)
 
+## Debugger
+- [Tensor analysis](https://github.com/aws/amazon-sagemaker-examples/tree/master/sagemaker-debugger/mnist_tensor_analysis). 
+Note: need to modify all constructors of Rule's subclasses (e.g., "GradientsLayer", "ActivationInputs") from `super().__init__(base_trial)` to
+`super().__init__(base_trial, None)`.
+
 ## Tuning
 - [Hyperparameters tuning](https://github.com/aws/amazon-sagemaker-examples/blob/master/hyperparameter_tuning/xgboost_direct_marketing/hpo_xgboost_direct_marketing_sagemaker_python_sdk.ipynb). Adjust `max_jobs` and `max_parallel_jobs` of `HyperparameterTuner` to speed up your tuning process.
 
