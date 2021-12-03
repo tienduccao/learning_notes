@@ -4,6 +4,7 @@
 # Quantum computing
 ## Explanation
 - [Trapping ions](https://www.youtube.com/watch?v=j1SKprQIkyE)
+- [Different technologies to build quantum computers](https://www.youtube.com/watch?v=OGsu5MIzruw)
 
 # Modelling tools
 ## Uncertainty quantification
