@@ -25,5 +25,8 @@ Use case: deploy ML models to run inference on new data
 - [Schedule your Lambda function](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/RunLambdaSchedule.html)
 - [Clean up](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-images.html#gettingstarted-image-cleanup)
 
+# Tips
+- Execute a bash in a new container of a docker image `docker run --rm -it --entrypoint bash <image-name-or-id>
+` (https://stackoverflow.com/a/43309168)
 # References
 - https://mlops.neptune.ai/
