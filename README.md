@@ -54,3 +54,6 @@ A platform to leverage Pytorch Lightning and other ML frameworks without managin
 
 # References
 - https://mlops.neptune.ai/
+
+# Library
+- [Neural networks sparsification](https://github.com/neuralmagic/sparseml)
