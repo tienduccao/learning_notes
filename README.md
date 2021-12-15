@@ -42,6 +42,12 @@ g.manual_seed(0)
 torch.use_deterministic_algorithms(True)
 ```
 
+# Pytorch Lightning
+## grid.ai
+A platform to leverage Pytorch Lightning and other ML frameworks without managing infrastructure by yourself
+- [CLI workflow](https://docs.grid.ai/start-here/typical-workflow-cli-user)
+- [Kaggle competition best practices](https://devblog.pytorchlightning.ai/best-practices-to-rank-on-kaggle-competition-with-pytorch-lightning-and-grid-ai-spot-instances-54aa5248aa8e)
+
 # Tips
 - Execute a bash in a new container of a docker image `docker run --rm -it --entrypoint bash <image-name-or-id>
 ` (https://stackoverflow.com/a/43309168)
