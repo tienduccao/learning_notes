@@ -17,6 +17,13 @@ Note: need to modify all constructors of Rule's subclasses (e.g., "GradientsLaye
 - [Visualize pipeline](https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-studio-list-pipelines.html)
 - https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html
 
+## Clarify
+- [Standalone lib](https://github.com/aws/amazon-sagemaker-clarify)
+- [Bias metrics definitions](https://pages.awscloud.com/rs/112-TZM-766/images/Fairness.Measures.for.Machine.Learning.in.Finance.pdf)
+- [Usage guide](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-fairness-and-explainability.html)
+- [Pre-training bias metrics](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-data-bias.html)
+- [Post-training bias metrics](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-measure-post-training-bias.html)
+
 # References
 - [Notebook available EC2 instances](https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html)
 - [ResourceLimitExceeded](https://aws.amazon.com/premiumsupport/knowledge-center/resourcelimitexceeded-sagemaker/)
