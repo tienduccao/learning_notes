@@ -46,7 +46,14 @@ Later on we'll execute all these tasks with the pipeline.
 - `Pipeline.add_step` provides the `parents` parameter to define the connections between pipelines' steps
 - `Pipeline.add_step` provides `pre_execute_callback` and `post_execute_callback` parameters to customize the pipeline logic
 
-### Hyperparameters optimization
+## Hyperparameters optimization
+https://clear.ml/docs/latest/docs/fundamentals/hpo
+
+Workflow
+- Configure an Optimization Task with a base task whose parameters will be optimized, and a set of parameter values to test
+- Clone the base task. Each clone's parameter is overridden with a value from the optimization task
+- Enqueue each clone for execution by a ClearML Agent
+- The Optimization Task records and monitors the cloned tasks' configuration and execution details, and returns a summary of the optimization results in tabular and parallel coordinate formats, and in a scalar plot.
 
 ## Scale your tasks with AutoScaler
 The AutoScaler pull your tasks from one or severals queues and distribute them to available computing 
