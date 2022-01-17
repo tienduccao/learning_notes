@@ -73,7 +73,7 @@ hyperparameters search.
 ### AWS setup
 - https://clear.ml/docs/latest/docs/deploying_clearml/clearml_server_aws_ec2_ami#clearml-server-aws-community-amis
 - Recommended EC2 instances: t3.large or t3a.large (cheaper)
-- Configure EC2 instance's security groups' policies to allow TCP traffic from port 8080 (web server) and 8008 (API server)
+- Configure EC2 instance's security groups' policies to allow TCP traffic from port 8080 (web server), 8008 (API server) and 8081 (file server)
 
 ### Server configuration
 - [Configure user authentication](https://clear.ml/docs/latest/docs/deploying_clearml/clearml_server_config#using-hashed-passwords). Remember to [restart the server](https://github.com/allegroai/clearml-server#restarting-clearml-server).
