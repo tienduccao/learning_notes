@@ -94,3 +94,61 @@ api {
     }
 }
 ```
+## Autoscaler with AWS
+### Configuration
+Create a file named `aws_autoscaler.yaml` like this one.
+Each 5 minutes (`polling_interval_time_min`) the Autoscaler will check for tasks from `gpu_queue` queue
+and launch at most 3 GPU instances (g3s.xlarge) to execute the available tasks.
+Spawned instances will be terminated after 10 idle minutes (`max_idle_time_min`).
+```
+configurations:
+  extra_clearml_conf: ''
+  extra_trains_conf: ''
+  extra_vm_bash_script: ''
+  queues:
+    gpu_queue:
+    - - aws4gpu
+      - 3
+  resource_configurations:
+    aws4gpu:
+      ami_id: ami-04129d3de24f88348
+      availability_zone: us-west-2c
+      ebs_device_name: /dev/sda1
+      ebs_volume_size: 100
+      ebs_volume_type: gp2
+      instance_type: g3s.xlarge
+      is_spot: false
+      key_name: gpu
+      security_group_ids: null
+hyper_params:
+  cloud_credentials_key: ''
+  cloud_credentials_region: us-west-2
+  cloud_credentials_secret: ''
+  cloud_provider: ''
+  default_docker_image: ''
+  git_user: ''
+  git_pass: ''
+  max_idle_time_min: 10
+  max_spin_up_time_min: 30
+  polling_interval_time_min: 5
+  use_credentials_chain: true
+  workers_prefix: dynamic_worker
+```
+
+The following values could be modified to suite your own needs:
+- `ami_id`: currently ClearML will try to launch agents on Ubuntu machines, so you must choose 
+AMIs for Ubuntu systems.
+- `availability_zone`, `cloud_credentials_region`: modify this value according to your AWS account
+- `ebs_volume_size`: (in GB) modify this value according to your storage requirement
+- `instance_type`: choose GPU instance if you need
+- `git_user`: your GitLab username if you need to clone your private repositories
+- `git_pass`: your [GitLab personal access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)
+- `use_credentials_chain: true`: to use your AWS credentials under `~/.aws/` folder,
+otherwise you need to fill in `cloud_credentials_key` and `cloud_credentials_secret`
+
+### Execute the Autoscaler
+Firstly you need to copy [this file](https://github.com/allegroai/clearml/blob/master/examples/services/aws-autoscaler/aws_autoscaler.py) locally.
+Put it into the same folder with the aws_autoscaler.yaml file.
+Then you run the Autoscaler with `python aws_autoscaler.py --run`.
+
+Note: you need to have clearml installed on your system.
