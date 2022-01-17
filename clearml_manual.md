@@ -67,3 +67,30 @@ When there's no more available tasks, each instance will be terminated after a m
 
 You could use the AutoScaler for experimenting different ideas at the same time, or for speeding up your
 hyperparameters search.
+
+# Setup
+## Deploy your own ClearML server with AWS
+### AWS setup
+- https://clear.ml/docs/latest/docs/deploying_clearml/clearml_server_aws_ec2_ami#clearml-server-aws-community-amis
+- Recommended EC2 instances: t3.large or t3a.large (cheaper)
+- Configure EC2 instance's security groups' policies to allow TCP traffic from port 8080 (web server) and 8008 (API server)
+
+### Server configuration
+- [Configure user authentication](https://clear.ml/docs/latest/docs/deploying_clearml/clearml_server_config#using-hashed-passwords). Remember to [restart the server](https://github.com/allegroai/clearml-server#restarting-clearml-server).
+- Now you could login with your credentials.
+- TODO add https support with ELB
+
+### Client configuration
+- Obtain your app credentials under `http://<your clearml server IP>/profile`
+- Configure the credential via `clearml-init` command or by editing `~/clearml.conf` directly
+```
+api {
+    web_server: http://<your clearml server IP>:8080
+    api_server: http://<your clearml server IP>:8008
+    files_server: http://<your clearml server IP>:8081
+    credentials {
+        "access_key" = "your access key"
+        "secret_key" = "your secret key"
+    }
+}
+```
