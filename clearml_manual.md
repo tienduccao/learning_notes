@@ -2,7 +2,7 @@
 - **Task** is your Python code, e.g., data processing, model training, etc.
     By default a task's type is set to *training*.
 - **Queue** is a queue of your tasks
-- **Agent (worker)** is the machine in which your tasks will be executed. One queue could be served by one or multiple agents.
+- **Agent (worker)** is the machine in which your tasks will be executed. One queue could be served by one or multiple agents. Agents could be executed under [services mode](https://clear.ml/docs/latest/docs/clearml_agent/#services-mode).
 
 # ClearML components
 - **ClearML server** provides a user interface to track your experiments.
@@ -29,6 +29,24 @@ The detailed instructions to setup your agent could be found [here](https://clea
 
 To log necessary data when running your task, you could use
 [Logger](https://clear.ml/docs/latest/docs/fundamentals/logger/).
+
+## Pipelines
+Reference 
+- https://clear.ml/docs/latest/docs/fundamentals/pipelines
+- https://clear.ml/docs/latest/docs/references/sdk/automation_controller_pipelinecontroller#add_step
+
+A pipeline consisted of multiple tasks.
+A **PipelineController** holds the execution logic of the pipeline and is executed on the **services** queue machine.
+A visual plot of the pipeline could be found under Results/Plot tab of the ControllerTask.
+
+Each task of the pipeline must have `task.execute_remotely` in order to register the task
+with ClearML server but not to execute it immediately.
+Later on we'll execute all these tasks with the pipeline.
+
+- `Pipeline.add_step` provides the `parents` parameter to define the connections between pipelines' steps
+- `Pipeline.add_step` provides `pre_execute_callback` and `post_execute_callback` parameters to customize the pipeline logic
+
+### Hyperparameters optimization
 
 ## Scale your tasks with AutoScaler
 The AutoScaler pull your tasks from one or severals queues and distribute them to available computing 
