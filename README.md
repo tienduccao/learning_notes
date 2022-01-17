@@ -1,5 +1,6 @@
 # MLOps
 - [SageMarker](sagemaker.md)
+- [ClearML](clearml_manual.md)
 
 # Quantum computing
 ## Explanation
