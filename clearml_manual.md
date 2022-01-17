@@ -145,6 +145,7 @@ AMIs for Ubuntu systems.
 - `git_pass`: your [GitLab personal access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html)
 - `use_credentials_chain: true`: to use your AWS credentials under `~/.aws/` folder,
 otherwise you need to fill in `cloud_credentials_key` and `cloud_credentials_secret`
+- `key_name`: name of your [EC2 key pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
 
 ### Execute the Autoscaler
 Firstly you need to copy [this file](https://github.com/allegroai/clearml/blob/master/examples/services/aws-autoscaler/aws_autoscaler.py) locally.
