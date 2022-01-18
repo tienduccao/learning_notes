@@ -159,7 +159,9 @@ export PYTHON_VERSION=3.8
 wget https://raw.githubusercontent.com/allegroai/clearml/master/examples/services/aws-autoscaler/aws_autoscaler.py
 pip install boto3
 git clone https://github.com/tienduccao/clearml
+cd clearml
 git checkout 28945c9cd156c1a6093fb5668569ee298d65898f
+cd ..
 pip install -e clearml
 python aws_autoscaler.py --run
 ```
