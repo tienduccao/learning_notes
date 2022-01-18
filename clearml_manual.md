@@ -100,6 +100,7 @@ Create a file named `aws_autoscaler.yaml` like this one.
 Each 5 minutes (`polling_interval_time_min`) the Autoscaler will check for tasks from `gpu_queue` queue
 and launch at most 3 GPU instances (g3s.xlarge) to execute the available tasks.
 Spawned instances will be terminated after 10 idle minutes (`max_idle_time_min`).
+
 ```
 configurations:
   extra_clearml_conf: ''
@@ -148,8 +149,17 @@ otherwise you need to fill in `cloud_credentials_key` and `cloud_credentials_sec
 - `key_name`: name of your [EC2 key pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
 
 ### Execute the Autoscaler
-Firstly you need to copy [this file](https://github.com/allegroai/clearml/blob/master/examples/services/aws-autoscaler/aws_autoscaler.py) locally.
-Put it into the same folder with the aws_autoscaler.yaml file.
-Then you run the Autoscaler with `python aws_autoscaler.py --run`.
+After installing git and tmux on your ClearML server, execute the following command.
+(Modify the `PYTHON_VERSION` if needed)
 
-Note: you need to have clearml installed on your system.
+```
+tmux new -s autoscaler
+source venv_autoscaler/bin/activate
+export PYTHON_VERSION=3.8
+wget https://raw.githubusercontent.com/allegroai/clearml/master/examples/services/aws-autoscaler/aws_autoscaler.py
+pip install boto3
+git clone https://github.com/tienduccao/clearml
+git checkout 28945c9cd156c1a6093fb5668569ee298d65898f
+pip install -e clearml
+python aws_autoscaler.py --run
+```
