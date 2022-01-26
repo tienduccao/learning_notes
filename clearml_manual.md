@@ -3,11 +3,14 @@
     By default a task's type is set to *training*.
 - **Queue** is a queue of your tasks
 - **Agent (worker)** is the machine in which your tasks will be executed. One queue could be served by one or multiple agents. Agents could be executed under [services mode](https://clear.ml/docs/latest/docs/clearml_agent/#services-mode).
+- **Artifact** represents a version of your data/model.
+    Artifacts are associated with a task.
 
 # ClearML components
 - **ClearML server** provides a user interface to track your experiments.
     The server is open-sourced and there are [many different ways](https://clear.ml/docs/latest/docs/deploying_clearml/clearml_server#deployment) to deploy it.
-- **clearml-agent**  which pulls tasks from queue and execute them
+- **clearml-agent**  which pulls tasks from queue and execute them. You could reduce your experiment
+startup time by using [this configuration](https://clear.ml/docs/latest/docs/clearml_agent#virtual-environment-reuse).
 
 # Workflows
 ## Execute a single task
@@ -29,6 +32,9 @@ The detailed instructions to setup your agent could be found [here](https://clea
 
 To log necessary data when running your task, you could use
 [Logger](https://clear.ml/docs/latest/docs/fundamentals/logger/).
+
+You could store the tasks' artifacts via cloud storage services (e.g., S3)
+by using `Task.init(output_uril=<link to your cloud storage bucket>)`.
 
 ## Pipelines
 Reference 
@@ -94,6 +100,9 @@ api {
     }
 }
 ```
+### Restore and backup your data
+https://clear.ml/docs/latest/docs/deploying_clearml/clearml_server_gcp/#backing-up-and-restoring-data-and-configuration
+
 ## Autoscaler with AWS
 ### Configuration
 Create a file named `aws_autoscaler.yaml` like this one.
